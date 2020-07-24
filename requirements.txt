@@ -1,0 +1,10 @@
+numpy
+pandas
+xlrd
+pyfakefs
+lusidtools
+jsonpickle
+pytz
+python-dateutil
+requests
+python-dateutil

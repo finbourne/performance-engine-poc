@@ -1,0 +1,13 @@
+*.csv
+*.json
+*.xlsx
+*.xls
+__pycache__/
+*.swp
+/data/*
+notes
+/tmp/*
+**/venv*
+/blocks/*
+.idea/
+.DS_Store

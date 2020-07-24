@@ -1,0 +1,6 @@
+* text eol=lf
+*.py text eol=lf
+*.pk text eol=lf
+*.xlsx binary
+cached/* binary
+*.jpg binary
