@@ -1,7 +1,9 @@
 import pytest
 import uuid
 from datetime import datetime
+from pathlib import Path
 
+import pandas as pd
 import pytz
 from lusid.api import PortfoliosApi, TransactionPortfoliosApi, PropertyDefinitionsApi
 from lusid.models import (
@@ -115,8 +117,9 @@ set_2 = PerformanceDataSetRequest(
     ]
 )
 
+
 @pytest.mark.parametrize(
-    "test_name, performance_scope, portfolio_scope, portfolio_code, request_body",
+    "test_name, performance_scope, portfolio_scope, portfolio_code, request_body, expected_outcome",
     [
         (
             "standard_report",
@@ -125,11 +128,13 @@ set_2 = PerformanceDataSetRequest(
             str(uuid.uuid4()),
             {
                 "set1": set_1
-            }
+            },
+            "standard_report.gzip"
         )
     ]
 )
-def test_upsert_returns_produce_report(test_name, performance_scope, portfolio_scope, portfolio_code, request_body):
+def test_upsert_returns_produce_report(test_name, performance_scope, portfolio_scope, portfolio_code, request_body,
+                                       expected_outcome):
 
     global block_store
     global portfolio_performance_api
@@ -152,11 +157,13 @@ def test_upsert_returns_produce_report(test_name, performance_scope, portfolio_s
         fields=[DAY, WTD, YTD, ROLL_WEEK]
     )
 
-    print ("wait")
+    expected_file_path = Path(__file__).parent.joinpath(f"expected/{expected_outcome}")
+    expected_outcome = pd.read_pickle(expected_file_path)
+    assert(report.equals(expected_outcome))
 
 
 @pytest.mark.parametrize(
-    "test_name, performance_scope, composite_scope, composite_code, portfolio_returns",
+    "test_name, performance_scope, composite_scope, composite_code, portfolio_returns, expected_outcome",
     [
         (
             "standard_composite",
@@ -180,11 +187,13 @@ def test_upsert_returns_produce_report(test_name, performance_scope, portfolio_s
                     },
                     ("2020-01-01", None)
                 )
-            ]
+            ],
+            "standard_composite.gzip"
         )
     ]
 )
-def test_upsert_returns_create_composite_produce_report(test_name, performance_scope, composite_scope, composite_code, portfolio_returns):
+def test_upsert_returns_create_composite_produce_report(test_name, performance_scope, composite_scope, composite_code,
+                                                        portfolio_returns, expected_outcome):
 
     global block_store
     global portfolio_group_composite
@@ -242,26 +251,29 @@ def test_upsert_returns_create_composite_produce_report(test_name, performance_s
         fields=[DAY, WTD, YTD, ROLL_WEEK]
     )
 
-    print ("wait")
+    expected_file_path = Path(__file__).parent.joinpath(f"expected/{expected_outcome}")
+    expected_outcome = pd.read_pickle(expected_file_path)
+    assert(report.equals(expected_outcome))
 
 
 
 @pytest.mark.parametrize(
-    "test_name, performance_scope, portfolio_scope, portfolio_code, request_body",
+    "test_name, performance_scope, portfolio_scope, portfolio_code, request_body, expected_outcome",
     [
         (
-            "standard_report",
+            "standard_report_arbitrary_inception",
             test_scope,
             test_scope,
             str(uuid.uuid4()),
             {
                 "set1": set_1
-            }
+            },
+            "standard_report_arbitrary_inception.gzip"
         )
     ]
 )
 def test_upsert_returns_produce_report_arbitrary_inception(test_name, performance_scope, portfolio_scope,
-                                                           portfolio_code, request_body):
+                                                           portfolio_code, request_body, expected_outcome):
 
     global block_store
     global portfolio_group_composite
@@ -337,4 +349,6 @@ def test_upsert_returns_produce_report_arbitrary_inception(test_name, performanc
         fields=[DAY, WTD, YTD, ROLL_WEEK, "ManagerStart"],
     )
 
-    print ("Wait")
+    expected_file_path = Path(__file__).parent.joinpath(f"expected/{expected_outcome}")
+    expected_outcome = pd.read_pickle(expected_file_path)
+    assert(report.equals(expected_outcome))
