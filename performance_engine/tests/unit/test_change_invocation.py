@@ -171,6 +171,7 @@ def test_change_parameters_called_when_outside_locked_period():
     assert cc.value.args[3] == as_date('2020-01-06')
     assert cc.value.args[4] == as_date('2020-01-10')
 
+
 def test_change_parameters_not_called_when_inside_locked_period():
     prf = Performance(entity_scope="Test", entity_code="GetChangesParams", src=src, block_store=InMemoryBlockStore())
 
@@ -182,6 +183,7 @@ def test_change_parameters_not_called_when_inside_locked_period():
 
     # No exception thrown means we will get here
     assert r is not None
+
 
 def test_change_parameters_called_when_creating_locked_period():
     prf = Performance(entity_scope="Test", entity_code="GetChangesParams", src=src, block_store=InMemoryBlockStore())

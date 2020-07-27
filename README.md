@@ -13,6 +13,12 @@ functional requirements.
 
 FINBOURNE welcomes all feedback on this project. 
 
+FINBOURNE does not provide any guarantee or warranty that the program made available for testing was delivered free of 
+defects.
+
+No other warranty expressed or implied is made with respect to the program, documentation or services to be supplied by 
+FINBOURNE, including without limitation any implied warranty of merchantability or fitness for a particular purpose.
+
 
 ## Portfolio Performance
 

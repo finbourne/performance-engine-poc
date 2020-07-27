@@ -131,7 +131,7 @@ def test_5yr_vol(recording):
                       '2020-01-01','2020-03-05')))]
 
     # To record tests, use pytest --recording=test_5yr_vol
-    filename = path.join('expected','5yr_vol.pk')
+    filename = Path(__file__).parent.joinpath('expected', '5yr_vol.pk')
 
     if 'test_5yr_vol' in recording:
        # Record the result and save as the expectation

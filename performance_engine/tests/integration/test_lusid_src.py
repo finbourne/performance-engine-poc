@@ -12,6 +12,7 @@ from tests.utilities import api_cacher
 config = PerformanceConfiguration( ext_flow_types={'APPRCY','EXPRCY'})
 
 
+@pytest.mark.skip("Setup of JLH Fund 1 or similar needs to be replicable before this test can be run")
 def test_get_perf_data(recording):
 
     with api_cacher.CachingApi(filename='lusid_src') as api:
@@ -41,7 +42,9 @@ cases = [
         dates("2019-11-04","2020-03-26","2020-03-28",None,"chg-test5")
         ]
 
+
 @pytest.mark.parametrize("test_case",cases)
+@pytest.mark.skip("Setup of JLH Fund 1 or similar needs to be replicable before this test can be run")
 def test_get_changes(test_case):
     last_date,last_asat,curr_asat,expected_result,cache_name = test_case
     with api_cacher.CachingApi(cache_name) as api:
@@ -52,6 +55,7 @@ def test_get_changes(test_case):
 @pytest.mark.parametrize(["locked","expected"],[
     (False,0.0),
     (True,-0.009049)])
+@pytest.mark.skip("Setup of JLH Fund 1 or similar needs to be replicable before this test can be run")
 def test_scenario(locked,expected):
     with api_cacher.CachingApi("scenario1") as api:
          prf = Performance(
