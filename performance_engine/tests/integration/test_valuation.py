@@ -1,7 +1,11 @@
+import pytest
+
 import valuation
 from tests.utilities import api_cacher
 import misc
 
+
+@pytest.mark.skip("Setup of JLH Fund 1 or similar needs to be replicable before this test can be run")
 def test_valuation():
     with api_cacher.CachingApi("valuation") as api:
          d,v = valuation.get_valuation(

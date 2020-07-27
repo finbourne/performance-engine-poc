@@ -8,8 +8,10 @@ from block_stores.block_store_in_memory import InMemoryBlockStore
 import pandas as pd
 import numpy as np
 
+
 def risk_free_rates(date,days):
     return np.round((2021 - date.year) * 0.005 + 0.003 * (days/365.0),6)
+
 
 def test_sharpe_ratios(recording):
     fields = [DAY,AGE_DAYS,
@@ -30,30 +32,31 @@ def test_sharpe_ratios(recording):
                 src=src,
                 block_store=InMemoryBlockStore()
             ).report(
-                False,
-                '2013-12-31',
-                '2020-03-05',
-                '2020-03-05',
+                locked=False,
+                start_date='2013-12-31',
+                end_date='2020-03-05',
+                asat='2020-03-05',
                 fields=fields
             )
-         )[['date','mv','inception'] + fields]
+         )[['date', 'mv', 'inception'] + fields]
 
     # Test cases
     subset = df
 
     # To record tests, use pytest --recording=test_sharpe
-    filename = Path(__file__).parent.joinpath('expected','sharpe_ratios.pk')
+    filename = Path(__file__).parent.joinpath('expected', 'sharpe_ratios.pk')
 
     if 'test_sharpe_ratios' in recording:
-       # Record the result and save as the expectation
-       subset.to_pickle(filename,protocol=0) 
+        # Record the result and save as the expectation
+        subset.to_pickle(filename, protocol=0)
 
-       # Also save a temporary csv version for manual review
-       nicer(df).to_csv('sharpe_ratios.csv',index=False)
+        # Also save a temporary csv version for manual review
+        nicer(df).to_csv('sharpe_ratios.csv', index=False)
+
     else:
-       # Load expected values and compare with the generated data
-       target = pd.read_pickle(filename)
+        # Load expected values and compare with the generated data
+        target = pd.read_pickle(filename)
 
-       # Compare with the expectation
-       pd.testing.assert_frame_equal(subset,target)
+        # Compare with the expectation
+        pd.testing.assert_frame_equal(subset,target)
 

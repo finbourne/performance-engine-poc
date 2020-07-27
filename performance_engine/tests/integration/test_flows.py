@@ -1,8 +1,12 @@
+import pytest
+
 import flows
 from tests.utilities import api_cacher
 from misc import *
 from config.config import PerformanceConfiguration
 
+
+@pytest.mark.skip("Setup of JLH Fund 1 or similar needs to be replicable before this test can be run")
 def test_get_flows():
     config = PerformanceConfiguration(ext_flow_types = {'APPRCY','EXPRCY'})
     with api_cacher.CachingApi("flows") as api:
@@ -21,6 +25,7 @@ def test_get_flows():
          assert v[as_date('2019-07-12')] == -1224380.23
 
 
+@pytest.mark.skip("Setup of JLH Fund 1 or similar needs to be replicable before this test can be run")
 def test_cursor():
 
     test_flows = {
