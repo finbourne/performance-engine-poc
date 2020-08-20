@@ -14,7 +14,7 @@ from performance_sources.mock_src import SeededSource
 from performance_sources.comp_src import CompositeSource
 from composites.in_memory_composite import InMemoryComposite
 from composites.portfolio_groups_composite import PortfolioGroupComposite
-from performance_engine.tests.utilities.api_factory import api_factory
+from tests.utilities.api_factory import api_factory
 from perf import Performance
 
 test_scope = "PerformanceEngineCompositeTests"

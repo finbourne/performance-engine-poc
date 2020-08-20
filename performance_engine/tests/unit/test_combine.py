@@ -1,3 +1,4 @@
+from pathlib import Path
 import pds
 from performance_sources import mock_src
 import pytest
@@ -6,9 +7,9 @@ import uuid
 from misc import *
 from block_stores.block_store_in_memory import InMemoryBlockStore
 from block_ops import combine
-from performance_engine.tests.utilities.environment import test_scope
+from tests.utilities.environment import test_scope
 
-src = mock_src.MockSource('Set1')
+src = mock_src.MockSource('Set1', filename=Path(__file__).parent.parent.joinpath("test-data.xlsx"))
 
 def add_block(entity_scope, entity_code, bs,sd,ed,ad):
     b = pds.PerformanceDataSet(sd,ed,ad)

@@ -3,10 +3,9 @@ from pathlib import Path
 from misc import *
 from performance_sources import mock_src
 import pytest
-from performance_engine.perf import Performance
+from perf import Performance
 from fields import *
 from block_stores.block_store_in_memory import InMemoryBlockStore
-from os import path
 import pandas as pd
 from performance_sources.mock_src import SeededSource
 
@@ -15,7 +14,7 @@ standard_fields = ['date','key','mv','flows','inception','correction']
 field_set=[DAY,WTD,MTD,QTD,YTD,ROLL_WEEK,ROLL_MONTH,ROLL_YEAR,ROLL_QTR]
 
 # Source for Set1 - used in env1 and env2
-src1 = mock_src.MockSource('Set1')
+src1 = mock_src.MockSource('Set1', filename=Path(__file__).parent.parent.joinpath("test-data.xlsx"))
 src1.get_changes = lambda v, w, x, y, z: as_date('2020-01-08') # only needed once
 
 # Set up environment #1 - no performance posted
@@ -84,7 +83,7 @@ def test_volatility_example():
             Performance(
                 entity_scope="test",
                 entity_code="test_5yr_vol",
-                src=mock_src.MockSource('VolEx1'),
+                src=mock_src.MockSource('VolEx1', filename=Path(__file__).parent.parent.joinpath("test-data.xlsx")),
                 block_store=InMemoryBlockStore()
             ).report(
                 False,

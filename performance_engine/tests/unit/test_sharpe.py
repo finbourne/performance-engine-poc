@@ -2,7 +2,7 @@ from pathlib import Path
 
 from misc import *
 from performance_sources.mock_src import SeededSource
-from performance_engine.perf import Performance
+from perf import Performance
 from fields import *
 from block_stores.block_store_in_memory import InMemoryBlockStore
 import pandas as pd

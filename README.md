@@ -1,24 +1,11 @@
-# Proof of Concept Performance Engine
+# Proof of Concept Performance Engine 
+
+[![Build Status](https://travis-ci.org/finbourne/performance-engine-poc.svg?branch=master)](https://travis-ci.org/finbourne/performance-engine-poc)
 
 This repository contains a proof of concept performance engine built on top of LUSID. It
 explores the idea of using LUSID's bi-temporal data store to persist performance returns for Portfolios.
 
 Furthermore it also explores the possibility of creating performance composites using LUSID's Portfolio Groups.
-
-The scope of this project is to solicit feedback on the functionality of the performance engine
-so that this feedback can be incorporated into the design and implementation of LUSID's performance engine APIs. 
-
-This repository is not guaranteed to be maintained and should not be used outside the scope of testing against
-functional requirements. 
-
-FINBOURNE welcomes all feedback on this project. 
-
-FINBOURNE does not provide any guarantee or warranty that the program made available for testing was delivered free of 
-defects.
-
-No other warranty expressed or implied is made with respect to the program, documentation or services to be supplied by 
-FINBOURNE, including without limitation any implied warranty of merchantability or fitness for a particular purpose.
-
 
 ## Portfolio Performance
 
@@ -459,3 +446,22 @@ is implemented in [lusid_src.py](performance_engine/performance_sources/lusid_sr
 
 Working with locked and unlocked periods is still a work in progress.
 
+### Disclaimer & Licensing
+
+The scope of this project is to solicit feedback on the functionality of the performance engine
+so that this feedback can be incorporated into the design and implementation of LUSID's performance engine APIs. 
+
+This repository is not guaranteed to be maintained and should not be used outside the scope of testing against
+functional requirements. 
+
+FINBOURNE welcomes all feedback on this project. 
+
+FINBOURNE warrants that it has the right to license the program to the customer and that each program license made 
+available to the customer for the purpose of testing will operate substantially in conformance with the documentation 
+for such program if available. 
+
+FINBOURNE does not provide any guarantee or warranty that the program made available for testing was delivered 
+free of defects.
+
+No other warranty expressed or implied is made with respect to the program, documentation or services to be supplied by 
+FINBOURNE, including without limitation any implied warranty of merchantability or fitness for a particular purpose.

@@ -1,0 +1,7 @@
+{
+	"fields" : {
+		"ClientInc" : "Portfolio/JLH/ClientInc",
+		"ManagerStart": "Portfolio/Managers/ManagerStart"
+	},
+	"ext_flow_types" : ["APPRCY","EXPRCY"]
+}

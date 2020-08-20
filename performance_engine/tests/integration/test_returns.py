@@ -1,13 +1,14 @@
+from pathlib import Path
 import pytest
 import uuid
 
 from misc import *
-from performance_engine.perf import Performance
+from perf import Performance
 from returns import Returns
 from return_sources.mock_src import ReturnSource
 from block_stores.block_store_in_memory import InMemoryBlockStore
 from fields import *
-from performance_engine.tests.utilities.environment import test_scope
+from tests.utilities.environment import test_scope
 
 @pytest.mark.parametrize(
     ("fund","expected"),
@@ -25,7 +26,7 @@ def test_cumulative_returns(fund,expected):
     Returns(bs).import_data(
         test_scope,
         portfolio_code,
-        ReturnSource(dataset='Ret1',portfolio=fund),
+        ReturnSource(dataset='Ret1', portfolio=fund, filename=Path(__file__).parent.parent.joinpath("test-data.xlsx")),
         '2020-01-01',
         '2020-01-11',
         '2020-01-11'
@@ -57,7 +58,7 @@ def test_cumulative_returns(fund,expected):
 )
 def test_two_periods(fund,expected_cum_ror,expected_correction):
     bs = InMemoryBlockStore()
-    rs = ReturnSource(dataset='Ret1',portfolio=fund)
+    rs = ReturnSource(dataset='Ret1', portfolio=fund, filename=Path(__file__).parent.parent.joinpath("test-data.xlsx"))
     Returns(bs).import_data(
         test_scope,
         fund,

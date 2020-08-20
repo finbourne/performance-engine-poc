@@ -1,7 +1,5 @@
 *.csv
-*.json
-*.xlsx
-*.xls
+*secret*
 __pycache__/
 *.swp
 /data/*

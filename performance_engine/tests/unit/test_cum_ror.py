@@ -1,10 +1,12 @@
+from pathlib import Path
+
 from misc import *
 from performance_sources import mock_src
 import pytest
-from performance_engine.perf import Performance
+from perf import Performance
 from block_stores.block_store_in_memory import InMemoryBlockStore
 
-src = mock_src.MockSource('Set1')
+src = mock_src.MockSource('Set1', filename=Path(__file__).parent.parent.joinpath("test-data.xlsx"))
 
 # Mock the intended responses from the get_changes call
 changes = { 

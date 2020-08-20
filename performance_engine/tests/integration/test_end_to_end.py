@@ -19,7 +19,7 @@ from apis_returns.upsert_returns import upsert_portfolio_returns
 from apis_returns.upsert_returns_models import PerformanceDataSetRequest, PerformanceDataPointRequest
 from block_stores.block_store_structured_results import BlockStoreStructuredResults
 from tests.utilities.api_factory import api_factory
-from performance_engine.tests.utilities.environment import test_scope
+from tests.utilities.environment import test_scope
 from apis_performance.portfolio_performance_api import PortfolioPerformanceApi
 from apis_performance.composite_performance_api import CompositePerformanceApi
 from composites.portfolio_groups_composite import PortfolioGroupComposite
