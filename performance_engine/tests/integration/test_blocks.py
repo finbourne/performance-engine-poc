@@ -1,3 +1,4 @@
+from pathlib import Path
 import pytest
 import uuid
 
@@ -7,11 +8,11 @@ from misc import *
 from block_stores.block_store_in_memory import InMemoryBlockStore
 from block_stores.block_store_structured_results import BlockStoreStructuredResults
 
-from performance_engine.tests.utilities.environment import test_scope
-from performance_engine.tests.utilities.api_factory import api_factory
+from tests.utilities.environment import test_scope
+from tests.utilities.api_factory import api_factory
 from interfaces import IBlockStore
 
-src = mock_src.MockSource('Set1')
+src = mock_src.MockSource('Set1', filename=Path(__file__).parent.parent.joinpath("test-data.xlsx"))
 
 
 def add_block(entity_scope: str, entity_code: str, bs: InMemoryBlockStore, sd, ed, ad) -> None:

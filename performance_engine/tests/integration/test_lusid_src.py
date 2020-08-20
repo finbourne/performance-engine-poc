@@ -5,7 +5,7 @@ from misc import *
 from os import path
 from fields import *
 from block_stores.block_store_in_memory import InMemoryBlockStore
-from performance_engine.perf import Performance
+from perf import Performance
 
 from tests.utilities import api_cacher
 

@@ -1,6 +1,6 @@
 from typing import Dict
 
-from performance_engine.merge import Merger
+from merge import Merger
 
 
 def v(idx, value) -> Dict:

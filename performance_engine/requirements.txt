@@ -1,0 +1,9 @@
+numpy===1.19.0
+pandas==1.0.5
+xlrd==1.2.0
+pyfakefs==4.0.2
+lusidtools==0.3.19
+jsonpickle==1.4.1
+pytz==2019.3
+python-dateutil==2.8.1
+requests==2.24.0

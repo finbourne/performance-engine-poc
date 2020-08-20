@@ -3,10 +3,10 @@ import pandas as pd
 from apis_returns.upsert_returns import upsert_portfolio_returns
 from apis_returns.upsert_returns_models import PerformanceDataSetRequest, PerformanceDataPointRequest
 from block_stores.block_store_structured_results import BlockStoreStructuredResults
-from performance_engine.perf import Performance
+from perf import Performance
 from fields import *
-from performance_engine.tests.utilities.api_factory import api_factory
-from performance_engine.tests.utilities.environment import test_scope
+from tests.utilities.api_factory import api_factory
+from tests.utilities.environment import test_scope
 
 bs = BlockStoreStructuredResults(api_factory=api_factory)
 
@@ -65,7 +65,7 @@ def test_upsert_then_report():
         locked=True,
         start_date="2020-01-01",
         end_date="2020-01-05",
-        asat="2020-08-10",
+        asat="2025-08-10",
         fields=[DAY, WTD, QTD, MTD, ROLL_WEEK],
         performance_scope=test_scope
     )

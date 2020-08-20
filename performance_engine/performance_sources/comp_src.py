@@ -7,7 +7,7 @@ from apis_performance.portfolio_performance_api import PortfolioPerformanceApi
 import comp_method
 from interfaces import IPerformanceSource, IComposite
 from misc import *
-from performance_engine.merge import Merger
+from merge import Merger
 
 
 class CompositeSource(IPerformanceSource):

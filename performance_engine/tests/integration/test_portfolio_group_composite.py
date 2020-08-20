@@ -7,7 +7,7 @@ import pytz
 from lusid import ApiException
 from lusid.api import TransactionPortfoliosApi, PortfoliosApi, PortfolioGroupsApi
 from lusid.models import CreateTransactionPortfolioRequest, CreatePortfolioGroupRequest, ResourceId
-from performance_engine.tests.utilities.api_factory import api_factory
+from tests.utilities.api_factory import api_factory
 from composites.portfolio_groups_composite import PortfolioGroupComposite
 
 logger = logging.getLogger()

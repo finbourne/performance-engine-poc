@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+
+  performance-engine-poc:
+    build: ""
+    container_name: performance-engine-poc-test
+    image: finbourne/performance-engine-poc-test
+    environment:
+      - FBN_CLIENT_ID
+      - FBN_CLIENT_SECRET
+      - FBN_LUSID_API_URL
+      - FBN_PASSWORD
+      - FBN_TOKEN_URL
+      - FBN_USERNAME
+    volumes:
+      - .:/usr/src

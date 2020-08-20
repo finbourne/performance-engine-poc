@@ -1,11 +1,12 @@
+from pathlib import Path
 import pytest
 
 from misc import *
 from block_stores.block_store_in_memory import InMemoryBlockStore
-from performance_engine.perf import Performance
+from perf import Performance
 from performance_sources import mock_src
 
-src = mock_src.MockSource('Set1')
+src = mock_src.MockSource('Set1', filename=Path(__file__).parent.parent.joinpath("test-data.xlsx"))
 
 
 @as_dates
