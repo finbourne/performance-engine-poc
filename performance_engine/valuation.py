@@ -9,8 +9,7 @@ from lusid.models import (
     MarketContextSuppliers,
     MarketDataKeyRule,
     MarketOptions,
-    ResourceId,
-    ResourceSupplier
+    ResourceId
 )
 from lusidtools.lpt import lpt
 from lusidtools.lpt.lpt import Rec
@@ -51,11 +50,11 @@ def default_recipe(scope: str):
                         field='Mid')
                  ],
                  suppliers=MarketContextSuppliers(
-                     commodity=ResourceSupplier.DATASCOPE,
-                     credit=ResourceSupplier.DATASCOPE,
-                     equity=ResourceSupplier.DATASCOPE,
-                     fx=ResourceSupplier.DATASCOPE,
-                     rates=ResourceSupplier.DATASCOPE),
+                     commodity='DataScope',
+                     credit='DataScope',
+                     equity='DataScope',
+                     fx='DataScope',
+                     rates='DataScope'),
                  options=MarketOptions(
                      attempt_to_infer_missing_fx=True,
                      default_supplier='DataScope',
