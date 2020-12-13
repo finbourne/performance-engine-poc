@@ -1,7 +1,5 @@
 # Proof of Concept Performance Engine 
 
-[![Build Status](https://travis-ci.org/finbourne/performance-engine-poc.svg?branch=master)](https://travis-ci.org/finbourne/performance-engine-poc)
-
 | branch | status |
 |--|--|
 |`master`| ![Daily build](https://github.com/finbourne/sample-notebooks/workflows/Daily%20build/badge.svg) ![Build and test](https://github.com/finbourne/sample-notebooks/workflows/Build%20and%20test/badge.svg)  |
