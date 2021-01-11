@@ -1,6 +1,8 @@
 # Proof of Concept Performance Engine 
 
-[![Build Status](https://travis-ci.org/finbourne/performance-engine-poc.svg?branch=master)](https://travis-ci.org/finbourne/performance-engine-poc)
+| branch | status |
+|--|--|
+|`master`| ![Daily build](https://github.com/finbourne/performance-engine-poc/workflows/Daily%20build/badge.svg) ![Build and test](https://github.com/finbourne/performance-engine-poc/workflows/Build%20and%20test/badge.svg)  |
 
 This repository contains a proof of concept performance engine built on top of LUSID. It
 explores the idea of using LUSID's bi-temporal data store to persist performance returns for Portfolios.
