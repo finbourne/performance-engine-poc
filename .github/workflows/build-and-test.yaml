@@ -6,9 +6,9 @@ name: Build and test
 
 on:
   push:
-    branches: [ develop ]
+    branches: [ master ]
   pull_request:
-    branches: [ master, develop ]
+    branches: [ master ]
 
 jobs:
   # This workflow contains a single job called "build"
