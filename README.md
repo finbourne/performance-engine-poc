@@ -2,7 +2,8 @@
 
 | branch | status |
 |--|--|
-|`master`| ![Daily build](https://github.com/finbourne/performance-engine-poc/workflows/Daily%20build/badge.svg) ![Build and test](https://github.com/finbourne/performance-engine-poc/workflows/Build%20and%20test/badge.svg)  |
+|`master`| ![Daily build](https://github.com/finbourne/performance-engine-poc/workflows/Daily%20build/badge.svg) ![Build and test](https://github.com/finbourne/performance-engine-poc/workflows/Build%20and%20test/badge.svg) [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffinbourne%2Fperformance-engine-poc.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffinbourne%2Fperformance-engine-poc?ref=badge_shield)
+ |
 
 This repository contains a proof of concept performance engine built on top of LUSID. It
 explores the idea of using LUSID's bi-temporal data store to persist performance returns for Portfolios.
@@ -467,3 +468,6 @@ free of defects.
 
 No other warranty expressed or implied is made with respect to the program, documentation or services to be supplied by 
 FINBOURNE, including without limitation any implied warranty of merchantability or fitness for a particular purpose.
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Ffinbourne%2Fperformance-engine-poc.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Ffinbourne%2Fperformance-engine-poc?ref=badge_large)
