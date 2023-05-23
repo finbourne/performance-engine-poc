@@ -6,4 +6,4 @@ lusidtools==0.3.19
 jsonpickle==1.4.1
 pytz==2019.3
 python-dateutil==2.8.1
-requests==2.24.0
+requests==2.31.0
