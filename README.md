@@ -1,3 +1,6 @@
+![LUSID_by_Finbourne](./resources/Finbourne_Logo_Teal.svg)
+
+
 # Proof of Concept Performance Engine 
 
 | branch | status |
